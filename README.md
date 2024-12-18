@@ -45,3 +45,16 @@ com! FormatJSON :%!python -c "import json, sys; obj = json.load(sys.stdin); prin
 nnoremap = :FormatJSON<Cr>
 ```
 Based on: https://pascalprecht.github.io/posts/pretty-print-json-in-vim/
+
+## Swap files in single location
+Instead of storing the `.swp` files alongside the file being viewed/edited, you can direct vim to just store them in a single location:
+```vim
+set directory=$HOME/.vim/swapfiles//
+```
+Based on: https://stackoverflow.com/a/21026618/4698227
+
+## Turning off backup files
+```vim
+set backupcopy=no
+```
+Some times needed when accessing remote files that are mounted through [gvfs](https://github.com/vim/vim/issues/5309).
