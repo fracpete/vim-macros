@@ -51,6 +51,8 @@ Instead of storing the `.swp` files alongside the file being viewed/edited, you 
 ```vim
 set directory=$HOME/.vim/swapfiles//
 ```
+**NB:** You need to create the directory first with `mkdir -p $HOME/.vim/swapfiles`, as vim won't create it for you.
+
 Based on: https://stackoverflow.com/a/21026618/4698227
 
 ## Turning off backup files
