@@ -59,4 +59,9 @@ Based on: https://stackoverflow.com/a/21026618/4698227
 ```vim
 set backupcopy=no
 ```
-Some times needed when accessing remote files that are mounted through [gvfs](https://github.com/vim/vim/issues/5309).
+Some times needed when accessing remote files that are mounted through [gvfs](https://github.com/vim/vim/issues/5309). 
+
+You can automate the command then by using this:
+```vim
+autocmd BufRead,BufNewFile /run/user/* set backupcopy=no
+```
