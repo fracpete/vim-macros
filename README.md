@@ -65,3 +65,12 @@ You can automate the command then by using this:
 ```vim
 autocmd BufRead,BufNewFile /run/user/* set backupcopy=no
 ```
+
+## Avoid moving hash (#) to start of line
+It can be very annoying when you are writing a shell/Python/etc script and inserting a hash (`#`) moves it to the start of the line. 
+You can turn this off with the following instruction:
+```vim
+set cinkeys -=0#
+```
+
+Taken from: https://stackoverflow.com/a/61386926/4698227
