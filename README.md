@@ -6,6 +6,24 @@ Useful vim macros.
 map <silent> <F9> :set invwrap<CR>
 ```
 
+## Comment/uncomment lines
+Add the following to `$HOME/.vim/plugins/comment_toggle.vim` to allow commenting/uncommenting via <F7>/<Shift+F7>:
+
+```vim
+" line comments based on file type
+au FileType haskell,vhdl,ada,sql let b:comment_leader = '-- '
+au FileType vim let b:comment_leader = '" '
+au FileType c,cpp,h,java let b:comment_leader = '// '
+au FileType sh,make,python let b:comment_leader = '# '
+au FileType tex let b:comment_leader = '% '
+
+" keyboard mapping
+noremap <silent> <F7> :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
+noremap <silent> <S-F7> :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
+```
+
+Based on: https://vim.fandom.com/wiki/Comment/UnComment_visually_selected_text
+
 ## Copy/paste shortcuts 
 ```vim
 " - select all 
