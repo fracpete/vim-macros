@@ -14,7 +14,7 @@ Add the following to `$HOME/.vim/plugins/comment_toggle.vim` to allow commenting
 au FileType haskell,vhdl,ada,sql let b:comment_leader = '-- '
 au FileType vim let b:comment_leader = '" '
 au FileType c,cpp,h,java let b:comment_leader = '// '
-au FileType sh,make,python let b:comment_leader = '# '
+au FileType sh,make,python,yaml let b:comment_leader = '# '
 au FileType tex let b:comment_leader = '% '
 
 " keyboard mapping
